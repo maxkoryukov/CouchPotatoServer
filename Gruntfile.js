@@ -70,7 +70,6 @@ module.exports = function(grunt){
 			options: {
 				compass: true,
 				update: true,
-				sourcemap: 'none'
 			},
 			server: {
 				files: [{
