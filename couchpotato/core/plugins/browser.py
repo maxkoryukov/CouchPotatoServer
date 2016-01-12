@@ -33,8 +33,7 @@ autoload = 'FileBrowser'
 class FileBrowser(Plugin):
 
     def __init__(self):
-        # could be better way (#getsoftchroot)
-        soft_chroot_dir = Plugin.conf(self, 'soft_chroot', section='core')
+        soft_chroot_dir = self.conf('soft_chroot', section='core')
         self.soft_chroot = SoftChroot(soft_chroot_dir)
 
         addApiView('directory.list', self.view, docs = {

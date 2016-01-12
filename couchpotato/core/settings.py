@@ -174,12 +174,12 @@ class Settings(object):
 
     def getValues(self):
         values = {}
-        
-        # TODO : There is two commented "continue" blocks (# COMMENTED_SKIPPING). They both are good... 
+
+        # TODO : There is two commented "continue" blocks (# COMMENTED_SKIPPING). They both are good...
         #        ... but, they omit output of values of hidden and non-readable options
-        #        Currently, such behaviour could break the Web UI of CP... 
+        #        Currently, such behaviour could break the Web UI of CP...
         #        So, currently this two blocks are commented (but they are required to
-        #        provide secure hidding of options. 
+        #        provide secure hidding of options.
         for section in self.sections():
 
             # COMMENTED_SKIPPING
@@ -239,7 +239,7 @@ class Settings(object):
         """Returns dict of UI-readable options
 
         To check, whether the option is readable self.isOptionReadable() is used
-        """ 
+        """
 
         res = {}
 
@@ -273,7 +273,7 @@ class Settings(object):
                     if len(sg)>0:
                         s['groups'] = sg
                         res[section_key] = s
-    
+
         return res
 
     def view(self, **kwargs):
@@ -340,7 +340,7 @@ class Settings(object):
         if not x:
             self.log.warning('Option "%s.%s" isn\'t readable', (section, option))
         return x
-            
+
     def isOptionWritable(self, section, option):
         meta = option + self.optionMetaSuffix()
         if self.p.has_option(section, meta):
