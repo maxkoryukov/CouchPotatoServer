@@ -326,26 +326,27 @@ class Settings(object):
         option = kwargs.get('name')
         value = kwargs.get('value')
 
-        from couchpotato.environment import Env
-        soft_chroot = Env.get('softchroot')
-
-        if self.getType(section, option) == 'directory':
-            value = soft_chroot.chroot2abs(value)
-
-        if self.getType(section, option) == 'directories':
-            import json
-            value = json.loads(value)
-            if not (value and isinstance(value, list)):
-                value = []
-            value = map(soft_chroot.chroot2abs, value)
-            value = self.directories_delimiter.join(value)
-
         if not self.isOptionWritable(section, option):
             self.log.warning('Option "%s.%s" isn\'t writable', (section, option))
             return {
                 'success' : False,
             }
         else:
+        	
+            from couchpotato.environment import Env
+            soft_chroot = Env.get('softchroot')
+
+            if self.getType(section, option) == 'directory':
+                value = soft_chroot.chroot2abs(value)
+
+            if self.getType(section, option) == 'directories':
+                import json
+                value = json.loads(value)
+                if not (value and isinstance(value, list)):
+                    value = []
+                value = map(soft_chroot.chroot2abs, value)
+                value = self.directories_delimiter.join(value)
+
             # See if a value handler is attached, use that as value
             new_value = fireEvent('setting.save.%s.%s' % (section, option), value, single = True)
 
@@ -357,7 +358,7 @@ class Settings(object):
             fireEvent('setting.save.%s.*.after' % section, single = True)
 
             return {
-                'success': True,
+                'success': True
             }
 
         # unreachable code:
