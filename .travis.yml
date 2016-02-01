@@ -33,8 +33,6 @@ install:
 script:
   - grunt test
   - grunt coverage
-  - pep8 CouchPotato.py
-  - pep8 couchpotato
 
 after_success:
   coveralls
