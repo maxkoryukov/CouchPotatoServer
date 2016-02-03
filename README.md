@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/maxkoryukov/CouchPotatoServer.png?label=ready&title=Ready)](https://waffle.io/maxkoryukov/CouchPotatoServer)
 CouchPotato
 =====
 
