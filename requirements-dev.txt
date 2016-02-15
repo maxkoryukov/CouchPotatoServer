@@ -6,7 +6,7 @@ nose-exclude>=0.4.1
 nose-htmloutput>=0.6.0
 coverage
 coveralls
-pep8==1.4.6
+pep8>=1.4.6
 
 # you could disable it on travis
 rednose>=0.4.0
