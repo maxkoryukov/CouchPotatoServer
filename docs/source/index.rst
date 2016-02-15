@@ -41,7 +41,3 @@ Table of contents:
 
    modules
 
-.. index::
-   single: asdf
-
-:ref:`modindex`

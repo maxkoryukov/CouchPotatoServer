@@ -11,8 +11,3 @@ Modules
    :glob:
 
    couchpotato/*
-
-Modindex
-========
-
-:ref:`modindex`
