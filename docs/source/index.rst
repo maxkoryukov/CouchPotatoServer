@@ -14,6 +14,12 @@ This is just first version
 
 :ref:`modindex`
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Articles
+
+   getting_started
+   settings
 
 .. _testing:
 
