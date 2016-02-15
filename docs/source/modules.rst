@@ -5,11 +5,9 @@
 Modules
 =======
 
-Custom index of modules
-
 .. toctree::
    :maxdepth: 1
-   :caption: Custom index
+   :caption: Custom index of modules
    :glob:
 
    couchpotato/*

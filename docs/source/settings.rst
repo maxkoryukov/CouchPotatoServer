@@ -31,7 +31,7 @@ You could tune the web interface of CP, with small changes in the configuration
     hide_about_update = 1
     hide_menuitem_update = 1
 
-Aditionally:
+If you want disable `updater`, do not forget to set up its options:
 
 .. code-block:: ini
 
@@ -46,7 +46,11 @@ Hide sections
 .. deprecated:: 3.0.2
     Use :ref:`access-to-option`
 
-You could hide all options from appropriate section of configuration file.
+Allow to hide all options from appropriate section of configuration file.
+
+Allowed values:
+
+* `section_hidden_internal_meta` = ( **True** | **False** )
 
 Example:
 
@@ -57,33 +61,30 @@ Example:
 
 See methods:
 
+* :meth:`~couchpotato.core.settings.Settings.isSectionReadable`
 * :meth:`~couchpotato.core.settings.Settings.optionMetaSuffix`
-* :meth:`~couchpotato.core.settings.Settings.optionMetaSuffix`
-
-_internal_meta
 
 .. _access-to-option:
 
-Access to options
-~~~~~~~~~~~~~~~~~
+Meta-options
+~~~~~~~~~~~~
 
-The behavior of common options is defined by internal meta-options, which you might add to the config file. These meta-options define whether the particular option will be visible/editable in the web-interface.
+**meta-options** - options in main configuration file, which define whether the related option will be visible/editable in the web-interface.
 
-In this example we have made the updater section invisible, so you couldn't see its config values in the web interface.
-The second thing: option core.username will be immutable in the web UI, since there is meta-option username_internal_meta.
+Allowed values for meta-options:
 
-Allowed values for options:
+* <option>_internal_meta = ( **hidden** | **ro** | **rw** )
 
-* <option>_internal_meta = ( hidden | ro | rw )
+**By default** (without meta-options) - all options are writable.
 
-* section_hidden_internal_meta = ( True | False )
+In next example of `.couchpotato/settings.conf` we have added three meta-options:
 
-**By default** - all settings are writable.
-
-Example of usage `.couchpotato/settings.conf`
+1. `api_key_internal_meta` will make `api_key` visible, but immutable in web UI.
+2. `username_internal_meta` will change nothing. All options remain writable by default.
+3. `proxy_server_internal_meta` - will hide option `proxy_server` from web UI
 
 .. code-block:: ini
-    :emphasize-lines: 4,7,10
+    :emphasize-lines: 5,8,11
 
     [core]
     ssl_key = 

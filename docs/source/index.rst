@@ -14,8 +14,6 @@ This is just first version
 
 :ref:`modindex`
 
-.. _articles:
-
 .. toctree::
    :maxdepth: 2
    :caption: Articles
