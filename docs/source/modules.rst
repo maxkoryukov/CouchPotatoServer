@@ -12,3 +12,7 @@ Modules
 
    couchpotato/*
 
+Modindex
+========
+
+:ref:`modindex`
