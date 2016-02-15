@@ -11,4 +11,3 @@ Modules
    :glob:
 
    couchpotato/*
-

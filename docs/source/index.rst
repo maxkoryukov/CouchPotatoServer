@@ -12,7 +12,7 @@ Some text, describing this index-document.
 
 This is just first version
 
-:ref:`modindex`
+Table of contents:
 
 .. toctree::
    :maxdepth: 2
@@ -21,15 +21,11 @@ This is just first version
    getting_started
    settings
 
-.. _testing:
-
 .. toctree::
    :maxdepth: 1
    :caption: Tests and testing
    
    unittests
-
-.. _autobuild:
 
 .. toctree::
    :maxdepth: 1
@@ -42,5 +38,6 @@ This is just first version
 .. toctree::
    :maxdepth: 1
    :caption: Custom index
-   
+
    modules
+
